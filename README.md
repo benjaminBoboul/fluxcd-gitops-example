@@ -42,13 +42,15 @@ flux get sources git
 #test	True 	Fetched revision: main/9b11bf3c6731792f79bb057490bf75114f9ee462	main/9b11bf3c6731792f79bb057490bf75114f9ee462	False
 ```
 
+> Note: all kind of update can trigger the git repository source, even commit without deployment modifications"
+
 ### Create a kustomize deployment
 
 Define a kustomize deployment called `testkustomize`
 
 ```bash
-flux create kustomization testkustomize --source=GitRepository/test --path="./deployment/environments/production" --prune=true --interval=10m
-
+flux create kustomization testkustomize --source=GitRepository/test --path="./deployment/environments/production" --prune=true --interval=10m --decryption-provider=sops --decryption-secret=sops-gpg
+# decryption-provider & decryption-secret refer to secrets encryption using sops
 # check kustomization
 flux get kustomizations
 #NAME 	READY	MESSAGE                                                        	REVISION                                     	SUSPENDED

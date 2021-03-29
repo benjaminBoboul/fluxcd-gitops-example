@@ -1,7 +1,35 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
-namePrefix: production-
-
+namePrefix: ENC[AES256_GCM,data:8bz/pI4riAHzcX8=,iv:qiSHtQq1YbEg1zIw6ttXjNNv1dF28gNku+KjT3j68ss=,tag:a6wzP8H4nufRCYV+he+w+Q==,type:str]
 bases:
-  - ../../base
+- ../../base
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    lastmodified: '2021-03-29T13:52:20Z'
+    mac: ENC[AES256_GCM,data:SYsNdnSRWNz1F/KEJ8sHYu5ACxIT6hmZO0gZ63HvAQ0omRL56NCeUDLuZlW9yCVfdce1t1U5CBMaJBnPnB0ksuqMwUdodf5ek8va1p0NoBag0DCrZnDU3OWZLleFeFMC95WRD56/3BlIysp0eiuV29mn/FcOyCR0wX4msVk43U8=,iv:cnrDwCWUff28BW7v5PRTnmh4EE0INMGQsXPXQ2nMnoY=,tag:stLyRlr27K1/RzVxkGuWQA==,type:str]
+    pgp:
+    -   created_at: '2021-03-29T13:52:19Z'
+        enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA4FYqiHSGAvLAQ/+IftmnRq9OHTYUsQto2UrotQP1Fjy6ahV7+0WBgCtTLM/
+            KHGh88IaFWIx4QI0fYB9bzo7guV11oDfPGcVqPC0re6nwkBy6asHFu5MJwPQkVqm
+            G+xkX3sO01sfrmk6Kqc6hg3ZjnJsnhzxOMXdkM0NYnqGvBqRbM6ZFDTmbEsrsWAN
+            UJgK31xIf206mH/reZ8mO3zRMouzGhdQCSc91m1RGv6nlUZf45f4FDa0pN1Vsp1z
+            uJdL6oM61Sk/mIgukccGDj4/Y1LoBJ5RxeeUJfBO8UNrbrLYYZycUAhwNq4n8jJZ
+            k/x5iaZKgzQ93L1FtYss5g7OgvTbdEi7zm6LXMTIVJKPEc29thTllvv12sVLUL+5
+            JOplAkCAKZj+hpoejhaI+R1Hxf6LwVEBV9SS6p0D3PNCLrxtRmzuocE0vWNCPTTa
+            uruUCq+BsiQKLtR2QeIBcH7vBndM2un//EvumQJpk5grYhZIBeyu9qp0o5yQ3RFG
+            fG5zOlu9b4Un87Xr0EqrovHzSpRfCuYgVRULenMYmWeLiRCD+BU+0gfUFqFB8TZT
+            WZvDLzrqwLs0V9eEP7xVLKzCfTEyhw3G63njbGtU8WGKi4wEjX5cGHEYIEqZMwyN
+            xdUbDaYVO5AMTEFV875UM4F1wRl+1sDV3eoMwy28W8hrqlbiRCeZ0a4pcsULxx/S
+            XgHm00iq0oKCAl/dpY2p1xeCjfKeM8qVHrWYBnLN612OGsvQMHdY3t4ogmVmzqKD
+            AlKPsE4jcGe+qxsDwth2hgNCVzQOqqyk0+4l4ieeyO4Zn2kYIvMR2tAtsWdhGZw=
+            =zAXA
+            -----END PGP MESSAGE-----
+        fp: 15C70D3984A287D51BEAB5788F7AEE0BCFC19635
+    encrypted_regex: namePrefix
+    version: 3.6.1
