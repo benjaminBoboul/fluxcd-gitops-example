@@ -1,35 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namePrefix: ENC[AES256_GCM,data:86RUWiTEJ8Rssgc=,iv:i5n4SCaJbUInrQFctU9LzUNqjhJh5LRF96MYtnpTZ/8=,tag:O1qsevAjDXjmG1bakOzqxQ==,type:str]
+namePrefix: production-
 bases:
 - ../../base
-sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    lastmodified: '2021-03-29T14:38:55Z'
-    mac: ENC[AES256_GCM,data:/H9LW7AyKJ0J2Sx/g7TUWkdLPj14FJIZH3t7cdB/KiKdCBkQ5+xo4NNnxlJfYjQX2vmSl0qOkxi8QplGUR2w/qcNDUcFV7PgZnC6ILoMVNbfsprUPp65qMfJD7OQMYCMSdbpkG/j77L3iKk/QEMbo38pvsNbEyn/XaBTEQZ0bqU=,iv:kvNSSWYBZ8BRUPZv+VLli0PNEgXkV7lmtRwyvg/QmHY=,tag:vJ3SCPUv9mTK7VP7PMUEig==,type:str]
-    pgp:
-    -   created_at: '2021-03-29T14:38:55Z'
-        enc: |
-            -----BEGIN PGP MESSAGE-----
-
-            hQIMA4FYqiHSGAvLARAAnR3f/jkkEMfdVS5jp90SGof9uy/rpbF/vrSAg0rN7sTB
-            NaPAty4HPgwotWvo5jOFfTs26k/77AxVs7BzOONMacXZuTZHeSLXJ41Ce4SfvtIK
-            lyGMnPaJa9pU0EmTuFW3gnzIKhsqZoRqFTTMAGAQWZC12AhTsXFaAcRGRilHwfv/
-            jyLKaeGy9SjR6uCovpQZVEPlgZRDSQFpF4iL6/8y/Z9kxQHOs/yah0KTWpnDyySs
-            f4u4TOJEJKWTh/X/5hWD+DOaWJuxulTL3/A37ZNz0w/AUTu5Q5v2S/DpeP0yaPL4
-            qLuLYZObLN9AHdN/++NU2/cYtdz1dAogWhNNuMl5l7+3bAyAfTgkw9R8K6kRf65u
-            ayOfXJCc9aw+F5ky0PqlK09nt2hRaTB7242XxkjaoCnIUWTwrM6SOSDNTdJPgfdb
-            Yjat4gjXGH2V4BPGUWYKRqkgoGfBJ6rL2f0dclTfVo1p79qnGdCeRD+42ZL9ALyV
-            PfP8Q0ILE/4TphV5ol9qpBTqZhljinupaO+uTB+fIXnTRrH2Q316oEI78OxYMjg1
-            mIv5b2PmCFfivotu7ttgEfmKkTpkqa8EWMXu1ncOgPP/z92S6FgRhe8mmCtIWjrv
-            I99ua3yEFUlMmotD6E4CcZ16WMzHLn/kM0yD1d8cKTwVumSxNRLM5tJZpRcQeyvS
-            XgE4xXUPBQuwOaWAjUqz+gPxIVmqXk7FbvlPoJmuZuNghsndAT14STMyoKBiIiTt
-            J8m2YlqUChvQLBwb1wYi58auKvYZ1T1paCRB9Fam3Dcch/MCuCb0bRolNGJiZ3c=
-            =2xyR
-            -----END PGP MESSAGE-----
-        fp: 15C70D3984A287D51BEAB5788F7AEE0BCFC19635
-    encrypted_regex: ^(namePrefix)$
-    version: 3.6.1
+resources:
+- secret.yaml
