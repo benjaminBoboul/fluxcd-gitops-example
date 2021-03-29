@@ -23,6 +23,38 @@ curl -s https://toolkit.fluxcd.io/install.sh | sudo bash
 flux check --pre
 ```
 
+In our case, since we're using flux in local, we'll install flux by typing: 
+
+```bash
+flux install
+```
+
+### Register our repository as a Git source
+
+Here we'll create a git source named `test`:
+
+```bash
+flux create source git test --url=https://gitbub.com/benjaminBoboul/fluxcd-gitops-example --branch=main
+
+# check the source:
+flux get sources git
+#NAME	READY	MESSAGE                                                        	REVISION                                     	SUSPENDED
+#test	True 	Fetched revision: main/9b11bf3c6731792f79bb057490bf75114f9ee462	main/9b11bf3c6731792f79bb057490bf75114f9ee462	False
+```
+
+### Create a kustomize deployment
+
+Define a kustomize deployment called `testkustomize`
+
+```bash
+flux create kustomization testkustomize --source=GitRepository/test --path="./deployment/environments/production" --prune=true --interval=10m
+
+# check kustomization
+flux get kustomizations
+#NAME 	READY	MESSAGE                                                        	REVISION                                     	SUSPENDED
+#testkustomize	True 	Applied revision: main/9b11bf3c6731792f79bb057490bf75114f9ee462	main/9b11bf3c6731792f79bb057490bf75114f9ee462	False
+```
+
 ## Generate GPG key for SOPS encryption
 
 We need to disable gpg key password with the `%no-protection` so flux would be able to decrypt secrets in our cluster.
