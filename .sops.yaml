@@ -1,0 +1,4 @@
+creation_rules:
+- encrypted_regex: '^(namePrefix)$'
+  pgp: >-
+    15C70D3984A287D51BEAB5788F7AEE0BCFC19635
