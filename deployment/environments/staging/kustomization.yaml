@@ -4,4 +4,8 @@ kind: Kustomization
 namePrefix: staging-
 
 bases:
-  - ../../base
+- ../../base
+resources:
+- secrets.yaml
+patches:
+- path: patch.yaml
