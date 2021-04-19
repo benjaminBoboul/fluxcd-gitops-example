@@ -11,5 +11,5 @@ spec:
             - name: SECRET_ENTITY
               valueFrom:
                 secretKeyRef:
-                  name: test-secret
+                  name: test-secret-staging
                   key: entity

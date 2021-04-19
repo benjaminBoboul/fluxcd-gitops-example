@@ -6,6 +6,6 @@ namePrefix: staging-
 bases:
 - ../../base
 resources:
-- secrets.yaml
+- secret.yaml
 patches:
 - path: patch.yaml
