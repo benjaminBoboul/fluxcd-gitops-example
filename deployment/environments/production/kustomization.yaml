@@ -6,4 +6,4 @@ bases:
 resources:
 - secret.yaml
 patches:
-- path: patch.yml
+- path: patch.yaml
