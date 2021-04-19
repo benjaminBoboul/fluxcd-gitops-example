@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "reveal-md index.md --theme white",
+    "start": "reveal-md index.md --theme white --highlight-theme atom-one-dark-reasonable",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -1,0 +1,8 @@
+{
+	"hashOneBasedIndex": "true",
+	"controls": "true",
+	"progress": "true",
+	"transition": "slide",
+	"transisionSpeed": "fast",
+	"slideNumber": "c/t"
+}
